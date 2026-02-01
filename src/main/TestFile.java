@@ -2,7 +2,9 @@ package main;
 
 import java.io.FileNotFoundException;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -40,16 +42,20 @@ public class TestFile {
 
   public void read_testfile() {
     try {
-      File t_file = new File("Test.md");
-      Scanner read = new Scanner(t_file);
+      BufferedReader read = new BufferedReader(new FileReader("Test.md"));
+      String line = read.readLine();
 
-      while (read.hasNextLine()) {
-        String data = read.nextLine();
-        IO.println(data);
+      Bold bold = new Bold();
+
+      while (line != null) {
+        bold = contain_bold(line);
+        IO.println(line);
+        line = read.readLine();
       }
+
       read.close();
-    } catch (FileNotFoundException fnfe) {
-      IO.println("ERROR: The file cannot be read." + fnfe.getMessage());
+    } catch (IOException ioe) {
+      IO.println("ERROR: The file cannot be read." + ioe.getMessage());
     }
   }
 }
