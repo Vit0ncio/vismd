@@ -1,9 +1,7 @@
-package main;
-
 public class Bold {
-  public void contain_bold(String text) {
+  public static void contain_bold(String text) {
     if (text.contains("**")) {
-      IO.println("\u001B[1m" + text);
+      IO.println("\033[1m" + text);
     }
   }
 }

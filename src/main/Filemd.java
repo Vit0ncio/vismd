@@ -1,7 +1,2 @@
-package main;
-
-import java.io.File;
-
-public class Filemd
-{
+public class Filemd {
 }
