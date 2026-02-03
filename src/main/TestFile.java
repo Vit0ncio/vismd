@@ -1,14 +1,13 @@
-package main;
-
-import java.io.FileNotFoundException;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class TestFile {
+  Bold bold = new Bold();
+  String line;
+
   public void create_testfile() {
     try {
       File t_file = new File("Test.md");
@@ -43,12 +42,10 @@ public class TestFile {
   public void read_testfile() {
     try {
       BufferedReader read = new BufferedReader(new FileReader("Test.md"));
-      String line = read.readLine();
-
-      Bold bold = new Bold();
+      line = read.readLine();
 
       while (line != null) {
-        bold = contain_bold(line);
+        bold.contain_bold(line);
         IO.println(line);
         line = read.readLine();
       }
