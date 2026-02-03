@@ -45,7 +45,9 @@ public class TestFile {
       line = read.readLine();
 
       while (line != null) {
-        bold.contain_bold(line);
+        if (line.startsWith("**")) {
+          IO.println(bold.contain_bold(line));
+        }
         IO.println(line);
         line = read.readLine();
       }
