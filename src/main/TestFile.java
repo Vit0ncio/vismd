@@ -7,6 +7,7 @@ import java.io.IOException;
 public class TestFile {
   Bold bold = new Bold();
   Italic italic = new Italic();
+  Heading head = new Heading();
   String line;
 
   public void create_testfile() {
@@ -46,6 +47,7 @@ public class TestFile {
       line = read.readLine();
 
       while (line != null) {
+        IO.println(head.which_heading(line));
         if (line.startsWith("**")) {
           IO.println(bold.contain_bold(line));
         } else if (line.startsWith("*")) {
