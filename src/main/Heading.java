@@ -3,9 +3,9 @@ public class Heading {
 
   public String which_heading(String text) {
     if (text.startsWith("# "))
-      return "\033[4m" + text.toUpperCase() + bold.contain_bold(text);
+      return "\033[4m" + text.toUpperCase();
     else if (text.startsWith("## "))
-      return "\033[4m" + text;
+      return "\033[4m";
     else if (text.startsWith("### "))
       return text;
     else
