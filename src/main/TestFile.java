@@ -48,11 +48,8 @@ public class TestFile {
 
       while (line != null) {
         IO.println(head.which_heading(line));
-        if (line.startsWith("**")) {
-          IO.println(bold.contain_bold(line));
-        } else if (line.startsWith("*")) {
-          IO.println(italic.contain_italic(line));
-        }
+        IO.println(bold.contain_bold(line));
+        IO.println(italic.contain_italic(line));
         IO.println(line);
         line = read.readLine();
       }
