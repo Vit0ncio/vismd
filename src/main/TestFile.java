@@ -6,6 +6,7 @@ import java.io.IOException;
 
 public class TestFile {
   Bold bold = new Bold();
+  Italic italic = new Italic();
   String line;
 
   public void create_testfile() {
@@ -47,6 +48,8 @@ public class TestFile {
       while (line != null) {
         if (line.startsWith("**")) {
           IO.println(bold.contain_bold(line));
+        } else if (line.startsWith("*")) {
+          IO.println(italic.contain_italic(line));
         }
         IO.println(line);
         line = read.readLine();
