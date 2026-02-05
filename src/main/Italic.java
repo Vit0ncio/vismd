@@ -3,6 +3,6 @@ public class Italic {
     if (text.startsWith("*"))
       return "\033[3m";
     else
-      return null;
+      return "";
   }
 }

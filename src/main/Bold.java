@@ -3,6 +3,6 @@ public class Bold {
     if (text.startsWith("**") || text.startsWith("# "))
       return "\033[1m";
     else
-      return null;
+      return "";
   }
 }

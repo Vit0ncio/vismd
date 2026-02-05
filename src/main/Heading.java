@@ -9,6 +9,6 @@ public class Heading {
     else if (text.startsWith("### "))
       return text;
     else
-      return null;
+      return "";
   }
 }
